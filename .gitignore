@@ -1,0 +1,13 @@
+.venv/
+data/raw/
+data/*.duckdb
+data/*.duckdb.wal
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/.user.yml
+logs/
+tableau/dados/
+tableau/*.twb
+__pycache__/
+.DS_Store
