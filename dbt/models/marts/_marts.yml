@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: fct_pedidos
+    description: "Fato de pedidos (1 linha por pedido) com valores, pagamento, avaliação e entrega."
+    columns:
+      - name: pedido_id
+        tests: [unique, not_null]
+      - name: cliente_id
+        tests:
+          - relationships: {to: ref('dim_clientes'), field: cliente_id}
+
+  - name: fct_itens_pedido
+    description: "Fato de itens (1 linha por item vendido)."
+    columns:
+      - name: item_pedido_id
+        tests: [unique, not_null]
+      - name: produto_id
+        tests:
+          - relationships: {to: ref('dim_produtos'), field: produto_id}
+      - name: vendedor_id
+        tests:
+          - relationships: {to: ref('dim_vendedores'), field: vendedor_id}
+
+  - name: dim_clientes
+    columns:
+      - name: cliente_id
+        tests: [unique, not_null]
+      - name: regiao
+        tests: [not_null]
+
+  - name: dim_produtos
+    columns:
+      - name: produto_id
+        tests: [unique, not_null]
+
+  - name: dim_vendedores
+    columns:
+      - name: vendedor_id
+        tests: [unique, not_null]
+
+  - name: dim_calendario
+    columns:
+      - name: data
+        tests: [unique, not_null]
+
+  - name: mart_pedidos_dashboard
+    description: "Base do dashboard no Tableau (jan/2017 a ago/2018, pedidos válidos)."
+    columns:
+      - name: pedido_id
+        tests: [unique, not_null]
+      - name: receita
+        tests: [not_null]
