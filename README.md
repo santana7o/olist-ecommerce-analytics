@@ -2,6 +2,8 @@
 
 Projeto de análise de dados ponta a ponta com o dataset público do marketplace Olist: cerca de 96 mil pedidos entregues entre jan/2017 e ago/2018, do dado bruto ao dashboard.
 
+Parte do meu portfólio: [santana7o.github.io](https://santana7o.github.io)
+
 **Pergunta de negócio:** atrasos na entrega derrubam a satisfação do cliente? Onde isso é mais grave e quanta receita está envolvida?
 
 **Dashboard interativo no Tableau Public:** [abrir o dashboard](https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/olist_dashboard_final/DashboardOlist)
