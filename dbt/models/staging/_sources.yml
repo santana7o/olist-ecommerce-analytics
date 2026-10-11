@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: silver
+    description: "Tabelas limpas pelo notebook 01_ingestao_limpeza (Colab)."
+    schema: silver
+    tables:
+      - name: orders
+        description: "Um registro por pedido."
+      - name: order_items
+        description: "Itens de cada pedido (um pedido pode ter vários itens)."
+      - name: order_payments
+        description: "Pagamentos (um pedido pode ser pago com mais de uma forma)."
+      - name: order_reviews
+        description: "Avaliação do cliente (1 por pedido após a limpeza)."
+      - name: customers
+      - name: sellers
+      - name: products
+      - name: category_translation

@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: stg_pedidos
+    description: "Pedidos padronizados (nomes em português, datas tipadas)."
+    columns:
+      - name: pedido_id
+        tests: [unique, not_null]
+      - name: cliente_id
+        tests:
+          - not_null
+          - relationships: {to: ref('stg_clientes'), field: cliente_id}
+      - name: status
+        tests:
+          - accepted_values:
+              values: [delivered, shipped, canceled, unavailable, invoiced, processing, created, approved]
+
+  - name: stg_itens_pedido
+    columns:
+      - name: item_pedido_id
+        tests: [unique, not_null]
+      - name: pedido_id
+        tests:
+          - relationships: {to: ref('stg_pedidos'), field: pedido_id}
+      - name: produto_id
+        tests:
+          - relationships: {to: ref('stg_produtos'), field: produto_id}
+
+  - name: stg_pagamentos
+    columns:
+      - name: pedido_id
+        tests: [not_null]
+
+  - name: stg_avaliacoes
+    columns:
+      - name: pedido_id
+        tests: [unique, not_null]
+      - name: nota
+        tests:
+          - accepted_values: {values: [1, 2, 3, 4, 5], quote: false}
+
+  - name: stg_clientes
+    columns:
+      - name: cliente_id
+        tests: [unique, not_null]
+
+  - name: stg_vendedores
+    columns:
+      - name: vendedor_id
+        tests: [unique, not_null]
+
+  - name: stg_produtos
+    columns:
+      - name: produto_id
+        tests: [unique, not_null]
