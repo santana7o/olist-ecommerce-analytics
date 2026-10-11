@@ -6,6 +6,8 @@ Projeto de análise de dados ponta a ponta com o dataset público do marketplace
 
 **Dashboard interativo no Tableau Public:** [abrir o dashboard](https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/olist_dashboard_final/DashboardOlist)
 
+![Dashboard, visão geral com todos os pedidos entregues](docs/img/dashboard_visao_geral.png)
+
 ---
 
 ## Principais resultados
@@ -19,6 +21,26 @@ Projeto de análise de dados ponta a ponta com o dataset público do marketplace
 | Pedidos atrasados com nota 1 ou 2 | **54%** (contra 9% dos pontuais) |
 | Taxa de atraso no Nordeste | **14,3%**, o dobro do Sul (7,0%) |
 | Vendas que passaram por pedidos atrasados | **cerca de R$ 1,15 milhão** |
+
+### A nota despenca a partir de 4 dias de atraso
+
+![Nota média por faixa de atraso](docs/img/nota_por_faixa_de_atraso.png)
+
+Entregar no prazo ou adiantado mantém a nota acima de 4. Com 1 a 3 dias de atraso o cliente ainda tolera (3,75), mas a partir de 4 dias a nota cai para 2,30 e, com 8 dias ou mais, para 1,73. É por isso que o alerta operacional recomendado abaixo começa em 4 dias.
+
+### Onde é mais grave: Nordeste
+
+![Dashboard filtrado para o Nordeste](docs/img/dashboard_nordeste.png)
+
+Filtrando o painel para o Nordeste, a taxa de atraso sobe de 8,1% (Brasil) para 14,3%, a nota média cai de 4,16 para 3,97 e a parcela de avaliações 1 e 2 sobe de 13% para 17%. O mapa mostra que o problema se concentra nos estados mais distantes do Sudeste, onde está a maioria dos vendedores.
+
+### Como ler o painel
+
+- **KPIs no topo:** pedidos entregues, receita, taxa de atraso, nota média, parcela de avaliações 1 e 2 e receita que passou por pedidos atrasados.
+- **Mapa:** taxa de atraso por estado; o clique em um estado filtra todo o painel.
+- **Nota por faixa de atraso:** o gráfico principal da análise.
+- **Pedidos por mês x taxa de atraso:** barras com o volume e linha com o atraso; os picos de atraso aparecem em nov/2017 (mês da Black Friday) e fev–mar/2018.
+- **Nota por categoria:** categorias com pior nota no topo; móveis de escritório é a pior (3,66).
 
 **Recomendações**
 
