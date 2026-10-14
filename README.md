@@ -137,4 +137,4 @@ Python (pandas), DuckDB, dbt, SQL, Tableau, Google Colab.
 
 ---
 
-Felipe Gabriel Coelho de Santana, Analista de Dados. [LinkedIn](https://www.linkedin.com/in/felipe-gabriel-coelho-de-santana-a33b49304)
+Felipe Gabriel Coelho de Santana, Analista de Dados. [LinkedIn](https://www.linkedin.com/in/felipe-gabriel-coelho-de-santana-a33b49304) · [GitHub](https://github.com/santana7o)
